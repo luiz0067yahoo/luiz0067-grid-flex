@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "luiz0067/grid-flex",
+  "version": "1.0.0",
+  "title": "Grid Flex",
+  "category": "layout",
+  "icon": "columns",
+  "description": "Grid flexível avançado com base nas classes de 12 colunas do Bootstrap 5 (row, col-*) com suporte a InnerBlocks em colunas filhas customizáveis.",
+  "keywords": [
+    "grid",
+    "flex",
+    "bootstrap",
+    "columns",
+    "layout",
+    "luiz0067"
+  ],
+  "textdomain": "luiz0067-grid-flex",
+  "attributes": {
+    "columnsCount": {
+      "type": "number",
+      "default": 2
+    },
+    "colWidthDesktop": {
+      "type": "string",
+      "default": "col-lg-6"
+    },
+    "colWidthTablet": {
+      "type": "string",
+      "default": "col-md-6"
+    },
+    "colWidthMobile": {
+      "type": "string",
+      "default": "col-12"
+    },
+    "gutterSize": {
+      "type": "string",
+      "default": "g-3"
+    },
+    "verticalAlign": {
+      "type": "string",
+      "default": "align-items-start"
+    },
+    "horizontalAlign": {
+      "type": "string",
+      "default": "justify-content-start"
+    },
+    "rowCustomClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "providesContext": {
+    "luiz0067/columnsCount": "columnsCount",
+    "luiz0067/colWidthDesktop": "colWidthDesktop",
+    "luiz0067/colWidthTablet": "colWidthTablet",
+    "luiz0067/colWidthMobile": "colWidthMobile"
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "innerBlocks": true,
+    "customClassName": true
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

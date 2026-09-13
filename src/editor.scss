@@ -1,0 +1,151 @@
+/**
+ * Styles for Editor Canvas and WYSIWYG experience
+ */
+
+.wp-block-luiz0067-grid-flex.is-editor-canvas {
+	position: relative;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	width: 100%;
+
+	// Header informativo no topo do bloco no editor
+	.luiz0067-grid-flex-header-bar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+		padding: 8px 14px;
+		background: #f8f9fa;
+		border: 1px solid #e2e8f0;
+		border-radius: 6px;
+		margin-bottom: 14px;
+		font-size: 12px;
+		color: #334155;
+		user-select: none;
+
+		.badge-title {
+			font-weight: 600;
+			color: #0f172a;
+			display: flex;
+			align-items: center;
+		}
+
+		.badge-meta code {
+			background: #e2e8f0;
+			color: #0d6efd;
+			padding: 2px 6px;
+			border-radius: 4px;
+			font-size: 11px;
+			font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+			margin: 0 2px;
+		}
+
+		.badge-info {
+			color: #64748b;
+			font-style: italic;
+			font-size: 11px;
+		}
+	}
+
+	// Linha interna com Bootstrap row
+	> .row {
+		min-height: 100px;
+		margin-right: calc(var(--bs-gutter-x) * -0.5);
+		margin-left: calc(var(--bs-gutter-x) * -0.5);
+
+		// Correção para o container de blocos do Gutenberg
+		> .block-editor-inner-blocks {
+			width: 100%;
+
+			> .block-editor-block-list__layout {
+				display: flex;
+				flex-wrap: wrap;
+				margin-right: calc(var(--bs-gutter-x) * -0.5);
+				margin-left: calc(var(--bs-gutter-x) * -0.5);
+				row-gap: 0;
+			}
+		}
+	}
+
+	// Guias pontilhadas de cada coluna
+	.luiz0067-grid-col-item {
+		padding-right: calc(var(--bs-gutter-x) * 0.5);
+		padding-left: calc(var(--bs-gutter-x) * 0.5);
+		margin-bottom: 12px;
+		box-sizing: border-box;
+
+		.luiz0067-grid-column-guide {
+			border: 2px dashed #93c5fd;
+			background: rgba(239, 246, 255, 0.45);
+			border-radius: 6px;
+			padding: 10px 12px;
+			min-height: 100px;
+			display: flex;
+			flex-direction: column;
+			transition: border-color 0.2s ease, background-color 0.2s ease;
+
+			&:hover {
+				border-color: #3b82f6;
+				background: rgba(239, 246, 255, 0.7);
+			}
+
+			.luiz0067-column-header-badge {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 8px;
+				padding-bottom: 6px;
+				border-bottom: 1px dashed rgba(59, 130, 246, 0.3);
+				font-size: 11px;
+
+				.badge-name {
+					font-weight: 600;
+					color: #1d4ed8;
+				}
+
+				.badge-classes {
+					background: #dbeafe;
+					color: #1e40af;
+					padding: 2px 6px;
+					border-radius: 4px;
+					font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+					font-size: 10px;
+				}
+			}
+
+			.luiz0067-column-inner-content {
+				flex: 1;
+				min-height: 50px;
+			}
+		}
+
+		&.is-selected .luiz0067-grid-column-guide {
+			border-color: #2563eb;
+			background: rgba(219, 234, 254, 0.6);
+			box-shadow: 0 0 0 1px #2563eb;
+		}
+	}
+}
+
+// Estilos das abas do InspectorControls
+.luiz0067-grid-tabs {
+	.components-tab-panel__tabs {
+		border-bottom: 1px solid #e2e8f0;
+		gap: 4px;
+
+		.components-button {
+			font-size: 12px;
+			font-weight: 500;
+			padding: 8px 12px;
+			border-radius: 4px 4px 0 0;
+			border-bottom: 2px solid transparent;
+
+			&.is-active {
+				color: #0d6efd;
+				font-weight: 600;
+				border-bottom-color: #0d6efd;
+			}
+		}
+	}
+}
